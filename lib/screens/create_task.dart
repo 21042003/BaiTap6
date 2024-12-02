@@ -16,7 +16,7 @@ class CreateTaskScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       body: Padding(
         //khoảng cách xung quanh nội dung chính
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         // khoảng cách 20px trái và phải
         child: Column(
           //Hiển thị các thành phần bên trong theo chiều dọc
