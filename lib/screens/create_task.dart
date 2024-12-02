@@ -13,9 +13,6 @@ class CreateTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const createNew(),
-      // ),
       backgroundColor: Colors.black,
       body: Padding(
         //khoảng cách xung quanh nội dung chính
@@ -32,18 +29,23 @@ class CreateTaskScreen extends StatelessWidget {
             //==========Hien thi chuyen lich =================
             const CalendarTask(),
             const SizedBox(height: 50),
-            //==========Hien thi ngay thang ============
+            //==========Hien thi ngay thang ==================
+
             //style: textStyle Định nghĩa kiểu chữ
             const Text('Schedule',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             const SizedBox(height: 20),
+            //mục điền tên
             TextFormField(
               decoration: const InputDecoration(
                 labelText: 'Name',
                 border: OutlineInputBorder(),
               ),
             ),
+
+            //khoảng cách các phần tử
             const SizedBox(height: 15),
+            //Mục điền thông tin
             TextFormField(
               maxLines: 3,
               decoration: const InputDecoration(
@@ -52,15 +54,19 @@ class CreateTaskScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            //Đặt các widget con theo chieu ngang.
+
+            //phần start và end đặt theo chiều ngang
             const Row(
               children: [
                 Expanded(
-                  //Tùy chỉnh để chọn thời gian
+                  //Start time
                   child: TimePickerWidget(
                       label: 'Start Time', initialTime: '06:00 PM'),
                 ),
+
                 SizedBox(width: 10), //dem khoang cach
+
+                //end time
                 Expanded(
                   child: TimePickerWidget(
                       label: 'End Time', initialTime: '09:00 PM'),
@@ -68,6 +74,7 @@ class CreateTaskScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
+
             // phần "===========Priority================="
             const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,18 +91,20 @@ class CreateTaskScreen extends StatelessWidget {
                 PrioritySelector(), //mức độ ưu tiên
               ],
             ),
+
+            //Hiển thị phần ToggleSwitch
             const SizedBox(height: 20),
             const ToggleSwitch(), //nút chuyển trạng thái
             const SizedBox(height: 20),
 
+            //===========nút bấm với hiệu ứng nổi=================
             ElevatedButton(
-              //nút bấm với hiệu ứng nổi
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 //định dạng nút
                 minimumSize: const Size(double.infinity, 50),
                 backgroundColor: AppColors.hexDE83B0, //màu nền
-                //bo goc cho nut
+                //bo góc nút
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
