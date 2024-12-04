@@ -17,7 +17,7 @@ class _PrioritySelectorState extends State<PrioritySelector> {
     return Row(
       children: [
         //high
-        Expanded(
+        Expanded(//khoảng trống
           child: _buildPriorityButton('High', AppColors.hexFACBBA),
         ),
         const SizedBox(width: 10),
@@ -35,6 +35,7 @@ class _PrioritySelectorState extends State<PrioritySelector> {
   }
 
   Widget _buildPriorityButton(String push, Color color) {
+    //lưu giá trị của button đang được chọn
     final isSelected = _selectedPriority == push;
     return GestureDetector(
       onTap: () {
